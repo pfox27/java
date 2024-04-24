@@ -1,7 +1,18 @@
-/* Hello World program */
+/* A program that displays a friendly salutation to the screen. */
 
-class HelloWorld{
-     public ststic void main(String[] args){
-         System.out.println("Hello, World!");
-      }
-}
+public class HelloWorld {
+	public static void main(String[] args){
+		System.out.println("Hello World");
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
