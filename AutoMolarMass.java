@@ -31,129 +31,129 @@ public static void main(String Args[]){
 		
 		int NumberOfAtoms = scn.nextInt();
 		
-		if (symbol == "H")
+		if (symbol.equals ("H"))
 			MolarMass = 1.01;
-		else if (symbol == "He")
+		else if (symbol.equals ("He"))
 			MolarMass = 4.00;
-		else if (symbol == "Li")
+		else if (symbol.equals ("Li"))
 			MolarMass = 6.94;
-		else if (symbol == "Be")
+		else if (symbol.equals ("Be"))
 			MolarMass = 9.01;
-		else if (symbol == "B")
+		else if (symbol.equals ("B"))
 			MolarMass = 10.81;
-		else if (symbol == "C")
+		else if (symbol.equals ("C"))
 			MolarMass = 12.01;
-		else if (symbol == "N")
+		else if (symbol.equals ("N"))
 			MolarMass = 14.01;
-		else if (symbol == "O") 
+		else if (symbol.equals ("O")) 
 			MolarMass = 16.00;
-		else if (symbol  == "F")
+		else if (symbol.equals ("F"))
 			MolarMass = 19.00;
-		else if (symbol == "Ne")
+		else if (symbol.equals ("Ne"))
 			MolarMass = 20.18;
-		else if (symbol == "Na")
+		else if (symbol.equals ("Na"))
 			MolarMass = 22.99;
-		else if (symbol == "Mg")
+		else if (symbol.equals ("Mg"))
 			MolarMass = 24.31;
-		else if (symbol == "Al")
+		else if (symbol.equals ("Al"))
 			MolarMass = 26.98;
-		else if (symbol == "Si")
+		else if (symbol.equals ("Si"))
 			MolarMass = 28.09;
-		else if (symbol == "P")
+		else if (symbol.equals ("P"))
 			MolarMass = 30.97;
-		else if (symbol == "S")
+		else if (symbol.equals ("S"))
 			MolarMass = 32.07;
-		else if (symbol == "Cl")
+		else if (symbol.equals ("Cl"))
 			MolarMass = 35.45;
-		else if (symbol == "Ar")
+		else if (symbol.equals ("Ar"))
 			MolarMass = 39.95;
-		else if (symbol == "K")
+		else if (symbol.equals ("K"))
 			MolarMass = 39.10;
-		else if (symbol == "Ca")
+		else if (symbol.equals ("Ca"))
 			MolarMass = 40.08;
-		else if (symbol == "Sc")
+		else if (symbol.equals ("Sc"))
 			MolarMass = 44.96;
-		else if (symbol == "Ti")
+		else if (symbol.equals ("Ti"))
 			MolarMass = 47.87;
-		else if (symbol == "V")
+		else if (symbol.equals ("V"))
 			MolarMass = 50.94;
-		else if (symbol == "Cr")
+		else if (symbol.equals ("Cr"))
 			MolarMass = 51.99;
-		else if (symbol == "Mn")
+		else if (symbol.equals ("Mn"))
 			MolarMass = 54.94;
-		else if (symbol == "Fe")
+		else if (symbol.equals ("Fe"))
 			MolarMass = 55.85;
-		else if (symbol == "Co")
+		else if (symbol.equals ("Co"))
 			MolarMass = 58.93;
-		else if (symbol == "Ni")
+		else if (symbol.equals ("Ni"))
 			MolarMass = 58.69;
-		else if (symbol == "Cu")
+		else if (symbol.equals ("Cu"))
 			MolarMass = 63.55;
-		else if (symbol == "Zn")
+		else if (symbol.equals ("Zn"))
 			MolarMass = 65.38;
-		else if (symbol == "Ga")
+		else if (symbol.equals ("Ga"))
 			MolarMass = 69.72;
-		else if (symbol == "Ge")
+		else if (symbol.equals ("Ge"))
 			MolarMass = 72.64;
-		else if (symbol == "As")
+		else if (symbol.equals ("As"))
 			MolarMass = 74.92;
-		else if (symbol == "Se")
+		else if (symbol.equals ("Se"))
 			MolarMass = 78.96;
-		else if (symbol == "Br")
+		else if (symbol.equals ("Br"))
 			MolarMass = 79.90;
-		else if (symbol == "Kr")
+		else if (symbol.equals ("Kr"))
 			MolarMass = 83.80;
-		else if (symbol == "Rb")
+		else if (symbol.equals ("Rb"))
 			MolarMass = 85.47;
-		else if (symbol == "Sr")
+		else if (symbol.equals ("Sr"))
 			MolarMass = 87.62;
-		else if (symbol == "Y")
+		else if (symbol.equals ("Y"))
 			MolarMass = 88.91;
-		else if (symbol == "Zr")
+		else if (symbol.equals ("Zr"))
 			MolarMass = 91.22;
-		else if (symbol == "Nb")
+		else if (symbol.equals ("Nb"))
 			MolarMass = 92.91;
-		else if (symbol == "Mo")
+		else if (symbol.equals ("Mo"))
 			MolarMass = 95.96;
-		else if (symbol == "Tc")
+		else if (symbol.equals ("Tc"))
 			MolarMass = 98;
-		else if (symbol == "Ru")
+		else if (symbol.equals ("Ru"))
 			MolarMass = 101.07;
-		else if (symbol == "Rh")
+		else if (symbol.equals ("Rh"))
 			MolarMass = 102.91;
-		else if (symbol == "Pd")
+		else if (symbol.equals ("Pd"))
 			MolarMass = 106.42;
-		else if (symbol == "Ag")
+		else if (symbol.equals ("Ag"))
 			MolarMass = 107.87;
-		else if (symbol == "Cd")
+		else if (symbol.equals ("Cd"))
 			MolarMass = 112.41;
-		else if (symbol == "In")
+		else if (symbol.equals ("In"))
 			MolarMass = 114.82;
-		else if (symbol == "Sn")
+		else if (symbol.equals ("Sn"))
 			MolarMass = 118.71;
-		else if (symbol == "Sb")
+		else if (symbol.equals ("Sb"))
 			MolarMass = 121.76;
-		else if (symbol == "Te")
+		else if (symbol.equals ("Te"))
 			MolarMass = 127.6;
-		else if (symbol == "I")
+		else if (symbol.equals ("I"))
 			MolarMass = 126.91;
-		else if (symbol == "Xe")
+		else if (symbol.equals ("Xe"))
 			MolarMass = 131.29;
-		else if (symbol == "Cd")
+		else if (symbol.equals ("Cd"))
 			MolarMass = 112.41;
-		else if (symbol == "In")
+		else if (symbol.equals ("In"))
 			MolarMass = 114.82;
-		else if (symbol == "Sn")
+		else if (symbol.equals ("Sn"))
 			MolarMass = 118.71;
-		else if (symbol == "Sb")
+		else if (symbol.equals ("Sb"))
 			MolarMass = 212.76;
-		else if (symbol == "Te")
+		else if (symbol.equals ("Te"))
 			MolarMass = 127.6;
-		else if (symbol == "I")
+		else if (symbol.equals ("I"))
 			MolarMass = 126.90;
-		else if (symbol == "Xe")
+		else if (symbol.equals ("Xe"))
 			MolarMass = 131.29;
-		else if (symbol == "Cs")
+		else if (symbol.equals ("Cs"))
 			MolarMass = 132.91;
 		else if (symbol == "Ba")
 			MolarMass = 137.33;
