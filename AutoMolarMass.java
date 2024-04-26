@@ -155,73 +155,73 @@ public static void main(String Args[]){
 			MolarMass = 131.29;
 		else if (symbol.equals ("Cs"))
 			MolarMass = 132.91;
-		else if (symbol == "Ba")
+		else if (symbol.equals ("Ba"))
 			MolarMass = 137.33;
-		else if (symbol == "La")
+		else if (symbol.equals ("La"))
 			MolarMass = 138.91;
-		else if (symbol == "Hf")
+		else if (symbol.equals ("Hf"))
 			MolarMass = 178.49;
-		else if (symbol == "Ta")
+		else if (symbol.equals ("Ta"))
 			MolarMass = 180.85;
-		else if (symbol == "W")
+		else if (symbol.equals ("W"))
 			MolarMass = 183.84;
-		else if (symbol == "Re")
+		else if (symbol.equals ("Re"))
 			MolarMass = 186.21;
-		else if (symbol == "Os")
+		else if (symbol.equals ("Os"))
 			MolarMass = 190.23;
-		else if (symbol == "Ir")
+		else if (symbol.equals ("Ir"))
 			MolarMass = 192.22;
-		else if (symbol == "Pt")
+		else if (symbol.equals ("Pt"))
 			MolarMass = 195.08;
-		else if (symbol == "Au")
+		else if (symbol.equals ("Au"))
 			MolarMass = 196.97;
-		else if (symbol == "Hg")
+		else if (symbol.equals ("Hg"))
 			MolarMass = 200.59;
-		else if (symbol == "Tl")
+		else if (symbol.equals ("Tl"))
 			MolarMass = 204.38;
-		else if (symbol == "Pb")
+		else if (symbol.equals ("Pb"))
 			MolarMass = 207.2;
-		else if (symbol == "Bi")
+		else if (symbol.equals ("Bi"))
 			MolarMass = 208.98;
-		else if (symbol == "Po")
+		else if (symbol.equals ("Po"))
 			MolarMass = 209;
-		else if (symbol == "At")
+		else if (symbol.equals ("At"))
 			MolarMass = 210;
-		else if (symbol == "Rn")
+		else if (symbol.equals ("Rn"))
 			MolarMass = 222;
-		else if (symbol == "Fr")
+		else if (symbol.equals ("Fr"))
 			MolarMass = 223;
-		else if (symbol == "Ra")
+		else if (symbol.equals ("Ra"))
 			MolarMass = 226;
-		else if (symbol == "Ac")
+		else if (symbol.equals ("Ac"))
 			MolarMass = 227;
-		else if (symbol == "Rf")
+		else if (symbol.equals ("Rf"))
 			MolarMass = 265;
-		else if (symbol == "Db")
+		else if (symbol.equals ("Db"))
 			MolarMass = 268;
-		else if (symbol == "Sg")
+		else if (symbol.equals ("Sg"))
 			MolarMass = 271;
-		else if (symbol == "Bh")
+		else if (symbol.equals ("Bh"))
 			MolarMass = 272;
-		else if (symbol == "Hs")
+		else if (symbol.equals ("Hs"))
 			MolarMass = 270;
-		else if (symbol == "Mt")
+		else if (symbol.equals ("Mt"))
 			MolarMass = 276;
-		else if (symbol == "Ds")
+		else if (symbol.equals ("Ds"))
 			MolarMass = 281;
-		else if (symbol == "Rg")
+		else if (symbol.equals ("Rg"))
 			MolarMass = 280;
-		else if (symbol == "Cn")
+		else if (symbol.equals ("Cn"))
 			MolarMass = 285;
-		else if (symbol == "Nh")
+		else if (symbol.equals ("Nh"))
 			MolarMass = 284;
-		else if (symbol == "Fl")
+		else if (symbol.equals ("Fl"))
 			MolarMass = 289;
-		else if (symbol == "Mc")
+		else if (symbol.equals ("Mc"))
 			MolarMass = 288;
-		else if (symbol == "Lv")
+		else if (symbol.equals ("Lv"))
 			MolarMass = 293;
-		else if (symbol == "Og")
+		else if (symbol.equals ("Og"))
 			MolarMass = 294;
 
 		System.out.println("\n" + symbol + "'s molar mass is  \n" + MolarMass); 
@@ -231,7 +231,7 @@ public static void main(String Args[]){
 	}
 	System.out.println("\nThe molar mass of the compound is " + TotalMass + " g/mol.\n");
 	System.out.println("");
-
+	scn.close();
 }
 }
 
