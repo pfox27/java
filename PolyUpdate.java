@@ -1,7 +1,7 @@
 /*  A program that asks the user to input the number of sides and side lengths for a regular polygon and then updates those attributes for an existing polygon.        */
 
 import java.util.Scanner;
-import public shapes.RegularPolygon;
+import java.lang.Object.*;
 
 public class PolyUpdate{
 
