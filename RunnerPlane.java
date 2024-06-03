@@ -8,7 +8,7 @@ public class RunnerPlane
   {
     Scanner scan = new Scanner(System.in);
 	int altitude = 0;
-    Plane plane = new Plane(altitude);
+    Plane p = new Plane();
     String command = "";
 
     while (!command.equals("q")) 
@@ -18,19 +18,22 @@ public class RunnerPlane
 
       if (command.equals("u")) 
       {
-          plane.upward();
+          p.upward();
+          System.out.println("Plane altitude is now " + p.getLocation());
 	  }
 	
       else if (command.equals("d")) 
       {
-          plane.downward();
+          p.downward();
+          //p.getLocation();
+          System.out.println("Plane altitude is now " + p.getLocation());
       }
-    
-      else if (command.equals("n"))
-      {
-		  Plane plane = new Plane(altitude);
-      }
-    
+      else if(command.equals("n")){
+        System.out.println("Starting location for a new Plane?");
+        int start = scan.nextInt();
+        p = new Plane(start);
+        scan.nextLine();
     }
+}
 }
 }

@@ -1,7 +1,7 @@
 /* A class that allows a program to adjust the location (altitude) of a plane. */
 
 public class Plane{
-	private int location
+	private int location;
 	
 	public Plane(){
 		location = 0;
@@ -39,12 +39,14 @@ public class Plane{
 		return location;
 	}
 	
-	String toString(){
-		String posRep = "";  // String representation of plane position.
-		int planePosition;
+	public String toString(){
+		String posRep = "                                        ";  // String representation of plane position.
+		int planePosition = 0;
 		planePosition = (location + 2000)/100;
-		posRep.charAt(planePosition) = "@";
-		System.out.println(psoRep);
+		posRep = posRep.substring(0, planePosition) + "@" + posRep.substring(planePosition + 1);
+		//posRep.charAt(planePosition) = "@";
+		System.out.println(posRep);
+		return ("");
 	}
 }
 
