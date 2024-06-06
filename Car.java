@@ -10,16 +10,16 @@ public class Car
   private double mpg;
   private static int count = 0;
   private int carID = 0;
-  Scanner scn = new Scanner();
+  Scanner scn = new Scanner(System.in);
   
-  public Car(String m, int y, String mod, double miles)
+  public Car(String m, int y, String mod, double mpg)
   {
     count++;
     carID = count;
-    setMake(m);
+    setMake();
     setYear(y);
-    setModel(mod);
-    setMpg(miles);
+    setModel();
+    setMpg(mpg);
   }
   
   public Car()
@@ -27,7 +27,7 @@ public class Car
     this("None", 2000, "None", 0);
   }
   
-  public void setMake(){
+  public void setMake(String make){
 	  System.out.println("Please enter the make of the vehicle: ");
 	  String make = scn.NextLine();
   }
@@ -50,7 +50,7 @@ public class Car
     String model = scn.NextLine();
   }
   
-  public void setmpg()
+  public void setMpg(double mpg)
   {
 	System.out.println("Please enter the fuel efficiency of the vehicle in miles per gallon: ");  
     String mpg = scn.NextLine();  
