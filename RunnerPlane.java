@@ -1,4 +1,8 @@
-/* A program that uses the class Plane to adjust the altitude of an aircraft. */
+/** A program that uses the class Plane to adjust the altitude of an aircraft. 
+ * <p>
+ * @return location - An integer representing the current altitude of Plane.
+ *  
+ * */
 
 import java.util.Scanner;
 
