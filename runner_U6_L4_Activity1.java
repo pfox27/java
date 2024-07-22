@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class runner_U6_L4_Activity_One
+public class runner_U6_L4_Activity1
 {
   public static void main(String[] args)
   {
@@ -17,7 +17,7 @@ public class runner_U6_L4_Activity_One
     String insWord = scan.nextLine();
     System.out.println("Enter place:");
     int pos = scan.nextInt();
-    System.out.println("Method return: " + U6_L4_Activity_One.insert(wordList, insWord, pos));
+    System.out.println("Method return: " + U6_L4_Activity1.insert(wordList, insWord, pos));
     System.out.print("Array contents: {");
     for(int i = 0; i < len-1; i++)
     {
