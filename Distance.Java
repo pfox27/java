@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class Average{
+public class Distance{
 
 public static double CalcAvg(double a, double b, double c, double d, double e)
 {
