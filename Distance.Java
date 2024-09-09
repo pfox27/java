@@ -1,4 +1,4 @@
-/*  A program that asks for 5 double values from the user and then computes their average.    */
+/*  A program that asks for 5 double values for distance from the user and then computes their average.    */
 
 import java.util.Scanner;
 
