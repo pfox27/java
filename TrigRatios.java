@@ -1,11 +1,14 @@
 /* A program that calculates the values of all six trigonometric ratios for a given angle. */
 
+import java.util.Scanner;  //Initializing Scanner class
+
 public class TrigRatios{
 
 	public static void main(String args[]){
 
 		// Declare variables
-	
+	        
+		Scanner myObj = new Scanner(System.in);  // Create new Scanner object
 		double degrees;
 		double radians;
 		double sine;
@@ -14,9 +17,12 @@ public class TrigRatios{
 		double cosecant;
 		double secant;
 		double cotangent;
+		
+		System.out.println("Please enter angle in degrees:");
+		int angle = myObj.nextInt(); 
 
-		degrees = 30;
-		radians = 30 * Math.PI/180;
+		degrees = angle;
+		radians = angle * Math.PI/180;
 		sine = Math.sin(radians);
 		cosine = Math.cos(radians);
 		tangent = Math.tan(radians);
@@ -34,18 +40,5 @@ public class TrigRatios{
 		System.out.println("\ncotangent = " + cotangent);
 	}
 }
-
-
-
-
-
-        
-
-
-
-
-
-
-
 
 
