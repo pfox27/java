@@ -1,3 +1,7 @@
+/************************************/
+/*         Molar Mass Calculator    */
+/************************************/
+
 /* A program that automatically calculates the molar mass of a given chemical compound and then the number of moles of the compound, given the identity of its constituent atoms and the mass of the sample. */
 
 import java.util.Scanner;    //Import the scanner class
