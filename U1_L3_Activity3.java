@@ -14,10 +14,6 @@ public class U1_L3_Activity3
     boolean response2 = myObj.nextBoolean();
     System.out.println("Question 1 - your answer: " + response1 + " Correct answer: true");
     System.out.println("Question 2 - your answer: " + response2 + " Correct answer: true");
-
-
-
-
-    
+ 
   }
 }
