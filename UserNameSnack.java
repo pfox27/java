@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class UserNameSnack{
 
 
-public static void main(String Args[]){
+public static void main(String[] Args){
 		
 	Scanner myObj = new Scanner(System.in);
 	System.out.println("Please enter your user name:");
