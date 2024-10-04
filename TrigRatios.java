@@ -20,9 +20,11 @@ public class TrigRatios{
 		
 		System.out.println("Please enter angle in degrees:");
 		int angle = myObj.nextInt(); 
-
+		
+		// Converting angle from degrees to radians
 		degrees = angle;
 		radians = angle * Math.PI/180;
+		//Calculate the six trigonometric ratios
 		sine = Math.sin(radians);
 		cosine = Math.cos(radians);
 		tangent = Math.tan(radians);
@@ -30,7 +32,8 @@ public class TrigRatios{
 		secant = 1/cosine;
 		cotangent = 1/tangent;
 
-        	System.out.println("\nThe angle is " + degrees + " degrees, or " + radians + " radians.");
+		// Output trigonometric ratio information to the screen
+        System.out.println("\nThe angle is " + degrees + " degrees, or " + radians + " radians.");
 		System.out.println("\nThe Trigonometric Ratios for the angle are as follows:");
 		System.out.println("\nsine = " + sine);
 		System.out.println("\ncosine = " + cosine);
