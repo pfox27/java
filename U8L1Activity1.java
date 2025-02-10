@@ -1,16 +1,16 @@
-public class U8_L1_Activity_1
+public class U8L1Activity1
 {
 
   // Sums the lead diagonal of a table of values, the dimensions of which are user defined.
 
-public class sumOfDiag{
+//public class sumOfDiag{
 	
-	private int limit = 0;
-	private int sum = 0;
+	private static int limit = 0;
+	private static int sum = 0;
 	
-	public sumOfDiag(int[] matrix){
+	public static int sumOfDiag(int[][] matrix){
 
-		if matrix.length > matrix[0].length{
+		if (matrix.length > matrix[0].length){
 			limit = matrix[0].length;
 		}
 		else 
@@ -19,14 +19,15 @@ public class sumOfDiag{
 				{			
   					for (int c = 0; c < limit; c++) // Accesses columns
   					{
-    						System.out.print(grid[r][c] + " \t"); // Prints elements on same line
+                                                System.out.println("Sum is currently: " + sum);
+						sum = sum + matrix[r][c]; // Adds current matrix entry into sum.
   						}
   			System.out.println(); // Skips to next line
-}
+		
+                                }  
+		return sum;
+
+                                     }
+                     }
 
 
-
-
-
-
-}

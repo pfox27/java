@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class runner_U8_L1_Activity_One
+public class runnerU8L1Activity1
 {
   public static void main(String[] args)
   {
@@ -26,7 +26,7 @@ public class runner_U8_L1_Activity_One
       System.out.println();
     }
     System.out.println();
-    System.out.println("Diagonal Sum: " + U8_L1_Activity_One.sumOfDiag(mat));
+    System.out.println("Diagonal Sum: " + U8L1Activity1.sumOfDiag(mat));
   }
 }
 
