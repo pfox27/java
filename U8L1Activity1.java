@@ -7,7 +7,8 @@ public class U8L1Activity1
 	
 	private static int limit = 0;
 	private static int sum = 0;
-	
+	private static int c=0;
+
 	public static int sumOfDiag(int[][] matrix){
 
 		if (matrix.length > matrix[0].length){
@@ -17,11 +18,12 @@ public class U8L1Activity1
 			limit = matrix.length;
 				for (int r = 0; r < limit; r++)  // Accesses rows
 				{			
-  					for (int c = 0; c < limit; c++) // Accesses columns
-  					{
+  					//for (int c = 0; c < limit; c++) // Accesses columns
+  					//{
                                                 System.out.println("Sum is currently: " + sum);
 						sum = sum + matrix[r][c]; // Adds current matrix entry into sum.
-  						}
+						c++;
+  					//	}
   			System.out.println(); // Skips to next line
 		
                                 }  
