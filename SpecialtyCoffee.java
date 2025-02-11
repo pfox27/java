@@ -35,7 +35,20 @@ public class SpecialtyCoffee extends Coffee{
 		isSkinny = i;
 		shots = sh;
 	}
+	public int getPrice(){
+		int price;
+			if (size.equals("extra large"))
+				price = 470 + 50;  // 50 cents extra for syrup
+			else if (size.equals("large"))
+				price = 440 + 50;  // 50 cents extra for syrup
+			else if (size.equals("medium"))
+				price = 360 + 30;  // 30 cents extra for syrup
+			else
+				price = 330 + 30;  // 30 cents extra for syrup
 
+			price += shots*30;
+		return price;
+  }
 	public String toString(){
 		if (isSkinny == false)
 			printSkinny = "non-skinny";

@@ -39,6 +39,8 @@ public class runnerCoffee
     if(c != null)
     {
       System.out.println(c);
+      int p = c.getPrice();
+      System.out.println("$"+p/100 + "."+ (p%100)/10 + p%10);
     }
   }
 }
