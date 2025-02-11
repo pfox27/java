@@ -28,7 +28,7 @@ public class SpecialtyCoffee extends Coffee{
 		shots = 1;
 	}
 
-	public SpecialtyCoffee(String s, String t, String f, boolean i, int sh){
+	public SpecialtyCoffee(String s, boolean i, int sh, String t, String f){
 		flavour = f;
 		size = s;
 		type = t;
@@ -36,13 +36,13 @@ public class SpecialtyCoffee extends Coffee{
 		shots = sh;
 	}
 
-	public toString(){
+	public String toString(){
 		if (isSkinny == false)
 			printSkinny = "non-skinny";
 		else
 			printSkinny = "skinny";
 
-		return "A" + size + "," + shots + "shot" + printSkinny + type + "with" + flavour;
+		return "A " + size + ", " + shots + "-shot, " + printSkinny + " " + type + " with " + flavour;
 	}
 }	
 		

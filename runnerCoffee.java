@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class runnerCoffee
 {
 
-  private static SpecialityCoffee c;
+  public static SpecialtyCoffee c;
 
   public static void main(String[] args)
   {
@@ -11,7 +11,7 @@ public class runnerCoffee
     int which = scan.nextInt();
     if (which == 1)
     {
-      c = new SpecialityCoffee();
+      c = new SpecialtyCoffee();
     }
     else if (which == 2 || which == 3)
     {
@@ -29,11 +29,11 @@ public class runnerCoffee
         boolean iS = (sk.equals("y")||sk.equals("yes")||sk.equals("t")||sk.equals("true"));
         System.out.println("Shots?");
         int sh = scan.nextInt();
-        c = new SpecialityCoffee(sz, iS, sh, tp, fl);
+        c = new SpecialtyCoffee(sz, iS, sh, tp, fl);
       }
       else
       {
-        c = new SpecialityCoffee(sz, tp, fl);
+        c = new SpecialtyCoffee(sz, tp, fl);
       }
     }
     if(c != null)
