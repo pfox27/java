@@ -21,20 +21,36 @@
  * 
  */
 
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class ColourBoard extends Board {
-		
-		//public Color GRID_COLOR_A = new Color(255, 251, 0);
-		//public Color GRID_COLOR_B = new Color(119, 21, 135);
-		private int Color[][];
-		
-			public ColourBoard(int dim1, int dim2){
-			super(dim1, dim2);
-			//this.grid = new Color[dim2][dim1];
-			this.GRID_COLOR_A = new Color(255,251,0);
-			this.GRID_COLOR_B = new Color(119,21,135);
-  }
-		
-	}
+   
+   //public static Color GRID_COLOR_A = new Color(255, 251, 0);
+   //public static Color GRID_COLOR_B = new Color(121, 6, 158);
+   
+   
+   
+		public ColourBoard(int var1, int var2) {
+			//public static Color GRID_COLOR_A = new Color(255, 251, 0);
+			//public static Color GRID_COLOR_B = new Color(121, 6, 158);
+			super(var1, var2);
+			super.GRID_COLOR_A = new Color(255, 251, 0);
+			super.GRID_COLOR_B = new Color(121, 6, 158);
+			
+      
+   }
+}
 
 
+
+   
+				
+				
+				
