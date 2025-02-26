@@ -5,6 +5,61 @@ import java.util.Scanner;
 
 public class CheetahSpeed{
 
+public static int sortTime(int[] timeList, int n){   // n is the number of values for time[]
+	
+	int temp;
+	boolean swapped;
+	swapped = true;
+	
+	while(swapped == true){
+		
+			for(int p = 0; p < n-1; p++){
+				if(timeList[p] > timeList[p+1]){
+					// swap timeList[p] and timeList[p+1] 
+					
+					temp = timeList[p];
+					timeList[p] = timeList[p+1];
+					timeList[p+1] = temp;
+					swapped = true;
+				}
+				else{
+					swapped = false;
+				}
+			}
+			 
+	}
+
+	return (timeList);
+}
+
+public static int sortPosition(int[] positionList, int n){   // n is the number of values for time[]
+	
+	int temp;
+	boolean swapped;
+	swapped = true;
+	
+	while(swapped == true){
+		
+			for(int p = 0; p < n-1; p++){
+				if(positionList[p] > positionList[p+1]){
+					// swap positionList[p] and positionList[p+1] 
+					
+					temp = positionList[p];
+					positionList[p] = positionList[p+1];
+					positionList[p+1] = temp;
+					swapped = true;
+				}
+				else{
+					swapped = false;
+				}
+			}
+			 
+	}
+
+	return (positionList);
+}
+
+
 public static void main(String Args[])
 {	
 	
@@ -22,7 +77,7 @@ public static void main(String Args[])
 	int[] time = new int[realNumObs];
 	int[] instSpeed = new int[realNumObs];
 
-	for(int i = 0; i <= numObs; i++){
+	for(int i = 0; i < numObs*2; i++){
 		System.out.println("\nPlease enter the next observation:");
 		obs[i]= sc.nextInt();
 		System.out.println("Current observation is: " + obs[i]);
@@ -56,6 +111,9 @@ public static void main(String Args[])
 			System.out.println("pCount is: " + pCount);
 			
 			}
+
+			int[] sortedTime = sortTime(time, numObs);
+			int[] sortedPosition = sortPosition(position, numObs);  
 
 			for(int y = 0; y < obs.length; y++){
 				instSpeed[y] = (position[y + 1] - position[y])/(time[y + 1] - time[y]);
