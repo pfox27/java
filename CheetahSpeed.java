@@ -26,8 +26,7 @@ public static int[] sortTime(int[] timeList, int n){   // n is the number of val
 				else{
 					swapped = false;
 				}
-			}
-			 
+			} 
 	}
 		System.out.println("The sorted times are: " + timeList);
 		
@@ -69,51 +68,68 @@ public static void main(String Args[])
 	Scanner sc = new Scanner(System.in);
 	System.out.println("\nPlease enter the number of observations: ");
 	int numObs = sc.nextInt();
-	int realNumObs = numObs*2;
-    int[] obs = new int[realNumObs];
+    int[] obs = new int[numObs*2];
 	System.out.println("The number of observations will be: " + numObs);
 	//int[] obs = {};
 	//int[] position = {};
 	//int[] time = {};
 	//double[] instVelocity = {};
-	int[] position = new int[realNumObs];
-	int[] time = new int[realNumObs];
-	int[] instSpeed = new int[realNumObs];
+	int[] position = new int[numObs];
+	int[] time = new int[numObs];
+	int[] instSpeed = new int[numObs];
 
 	for(int i = 0; i < numObs*2; i++){
 		System.out.println("\nPlease enter the next observation:");
 		obs[i]= sc.nextInt();
-		System.out.println("Current observation is: " + obs[i]);
+		System.out.println("\nCurrent observation is: " + obs[i]);
 			}
 		
 		System.out.println("\nObservations list: ");
 		
-			for(int m = 0; m < realNumObs; m++){
+			for(int m = 0; m < numObs*2; m++){
 			System.out.println(obs[m]);
 			}
 		
 		int pCount = 0;
 		int tCount = 0;
+		System.out.println("\nThe second data value is: " + obs[1]);     //Works up to here.
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~ ");
+		System.out.println("\n");
 		
-		for(int t = 0; t < obs.length; t++){
+		
+		for(int t = 0; t < numObs*2; t++){
 			
 				if(t%2 != 0){     // if index t is odd
 					position[pCount] = obs[t];
+					System.out.println("\nCurrent position is: " + position[pCount]);
 					pCount++;
 				}
 				
 				else{     // if index t is even
 				time[tCount] = obs[t];
+				System.out.println("\nCurrent time is: " + time[tCount]);
 				tCount++;
 			
 				}				// In these loops, we create two separate arrays for position and time and make sure the indices start at 0.
 			
-			System.out.println("Current time is: " + time[tCount]);
-			System.out.println("Current position is: " + position[pCount]);
+			//System.out.println("\nCurrent time is: " + time[tCount]);
+			//System.out.println("\nCurrent position is: " + position[pCount]);
 			System.out.println("tCount is: " + tCount);
 			System.out.println("pCount is: " + pCount);
 			
 			}
+			
+			System.out.println("\nTimes list: ");
+		
+			for(int k = 0; k < numObs; k++){
+			System.out.println(time[k]);
+			}
+			
+			System.out.println("\nPositions list: ");
+			for(int b = 0; b < numObs; b++){
+			System.out.println(time[b]);
+			}
+			
 
 			int[] sortedTime = sortTime(time, numObs);
 			int[] sortedPosition = sortPosition(position, numObs);  
