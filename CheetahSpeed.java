@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class CheetahSpeed{
 
-public static int sortTime(int[] timeList, int n){   // n is the number of values for time[]
+public static int[] sortTime(int[] timeList, int n){   // n is the number of values for time[]
 	
 	int temp;
 	boolean swapped;
@@ -26,13 +26,13 @@ public static int sortTime(int[] timeList, int n){   // n is the number of value
 					swapped = false;
 				}
 			}
-			 
+			 System.out.println("The sorted times are: " + timeList);
 	}
 
 	return (timeList);
 }
 
-public static int sortPosition(int[] positionList, int n){   // n is the number of values for time[]
+public static int[] sortPosition(int[] positionList, int n){   // n is the number of values for time[]
 	
 	int temp;
 	boolean swapped;
@@ -55,7 +55,7 @@ public static int sortPosition(int[] positionList, int n){   // n is the number 
 			}
 			 
 	}
-
+		System.out.println("The sorted positions are: " + positionList);
 	return (positionList);
 }
 
