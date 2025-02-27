@@ -10,6 +10,7 @@ public static int[] sortTime(int[] timeList, int n){   // n is the number of val
 	int temp;
 	boolean swapped;
 	swapped = true;
+	System.out.println("The unsorted times are: " + timeList);
 	
 	while(swapped == true){
 		
@@ -26,9 +27,10 @@ public static int[] sortTime(int[] timeList, int n){   // n is the number of val
 					swapped = false;
 				}
 			}
-			 System.out.println("The sorted times are: " + timeList);
+			 
 	}
-
+		System.out.println("The sorted times are: " + timeList);
+		
 	return (timeList);
 }
 
@@ -37,6 +39,7 @@ public static int[] sortPosition(int[] positionList, int n){   // n is the numbe
 	int temp;
 	boolean swapped;
 	swapped = true;
+	System.out.println("The unsorted positions are: " + positionList);
 	
 	while(swapped == true){
 		
