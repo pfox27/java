@@ -10,7 +10,14 @@ public static int[] sortTime(int[] timeList, int n){   // n is the number of val
 	int temp;
 	boolean swapped;
 	swapped = true;
-	System.out.println("The unsorted times are: " + timeList);
+	
+	System.out.println("\nUnsorted Times list: ");
+		
+			for(int c = 0; c < n; c++){
+			System.out.println(timeList[c]);
+			}
+	
+	//System.out.println("The unsorted times are: " + timeList);
 	
 	while(swapped == true){
 		
@@ -26,9 +33,14 @@ public static int[] sortTime(int[] timeList, int n){   // n is the number of val
 				else{
 					swapped = false;
 				}
+				
+				System.out.println("\nTimes list: ");
+				for(int g = 0; g < n; g++){
+				System.out.println(timeList[g]);
+			}
 			} 
 	}
-		System.out.println("The sorted times are: " + timeList);
+		//System.out.println("The sorted times are: " + timeList);
 		
 	return (timeList);
 }
@@ -54,16 +66,21 @@ public static int[] sortPosition(int[] positionList, int n){   // n is the numbe
 				else{
 					swapped = false;
 				}
+				
+				System.out.println("\nPositions list: ");
+				for(int a = 0; a < n; a++){
+				System.out.println(positionList[a]);
 			}
 			 
 	}
-		System.out.println("The sorted positions are: " + positionList);
-	return (positionList);
+		//System.out.println("The sorted positions are: " + positionList);
+	
+	}
+return (positionList);
 }
 
 
-public static void main(String Args[])
-{	
+public static void main(String Args[]){	
 	
 	Scanner sc = new Scanner(System.in);
 	System.out.println("\nPlease enter the number of observations: ");
@@ -127,12 +144,23 @@ public static void main(String Args[])
 			
 			System.out.println("\nPositions list: ");
 			for(int b = 0; b < numObs; b++){
-			System.out.println(time[b]);
+			System.out.println(position[b]);
 			}
 			
 
 			int[] sortedTime = sortTime(time, numObs);
-			int[] sortedPosition = sortPosition(position, numObs);  
+			
+				System.out.println("\nFinal Sorted Positions list: ");
+				for(int r = 0; r < n; r++){
+				System.out.println(sortedTime[r]);
+				}
+			
+			int[] sortedPosition = sortPosition(position, numObs); 
+				
+				System.out.println("\nFinal Sorted Positions list: ");
+				for(int r = 0; r < n; r++){
+				System.out.println(sortedTime[r]);
+				}
 
 			for(int y = 0; y < obs.length; y++){
 				instSpeed[y] = (position[y + 1] - position[y])/(time[y + 1] - time[y]);
