@@ -5,6 +5,20 @@ import java.util.Scanner;
 
 public class CheetahSpeed{
 
+public static double maxSpeed(int[] speedArray, int numSpeeds){
+	
+	double max = 0.0;
+	
+		for(int f = 0; f < numSpeeds; f++){
+				if(speedArray[f+1] > speedArray[f]){ 
+					
+					max = speedArray[f+1];
+				}
+			}
+	return(max);
+}
+
+
 public static int[] sortTime(int[] timeList, int n){   // n is the number of values for time[]
 	
 	int temp;
@@ -166,19 +180,22 @@ public static void main(String Args[]){
 				instSpeed[y] = (sortedPosition[y + 1] - sortedPosition[y])/(sortedTime[y + 1] - sortedTime[y]);
 			}
 		
-		System.out.println("\n Instantaneous Velocities Are: ");
+					System.out.println("\n Instantaneous Speeds Are: ");
 
-		for(int e = 0; e < numObs-1; e++){
+					for(int e = 0; e < numObs-1; e++){
 				
-				System.out.println(sortedPosition[e]);
+				System.out.println(instSpeed[e]);
 			}
 
-
-			}
-		
+		double highSpeed = maxSpeed(instSpeed, numObs);
+		System.out.println("The maximum speed is: " + highSpeed);
 		
 
 		}
+		
+		
+
+	}
 
 	
 
