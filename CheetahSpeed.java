@@ -150,20 +150,27 @@ public static void main(String Args[]){
 
 			int[] sortedTime = sortTime(time, numObs);
 			
-				System.out.println("\nFinal Sorted Positions list: ");
-				for(int r = 0; r < n; r++){
+				System.out.println("\nFinal Sorted Times list: ");
+				for(int r = 0; r < numObs; r++){
 				System.out.println(sortedTime[r]);
 				}
 			
 			int[] sortedPosition = sortPosition(position, numObs); 
 				
 				System.out.println("\nFinal Sorted Positions list: ");
-				for(int r = 0; r < n; r++){
-				System.out.println(sortedTime[r]);
+				for(int v = 0; v < numObs; v++){
+				System.out.println(sortedPosition[v]);
 				}
 
-			for(int y = 0; y < obs.length; y++){
-				instSpeed[y] = (position[y + 1] - position[y])/(time[y + 1] - time[y]);
+			for(int y = 0; y < numObs-1; y++){
+				instSpeed[y] = (sortedPosition[y + 1] - sortedPosition[y])/(sortedTime[y + 1] - sortedTime[y]);
+			}
+		
+		System.out.println("\n Instantaneous Velocities Are: ");
+
+		for(int e = 0; e < numObs-1; e++){
+				
+				System.out.println(sortedPosition[e]);
 			}
 
 
