@@ -118,13 +118,14 @@ public static void main(String Args[]){
 		int[] time = new int[numObs];
 		double[] instSpeed = new double[numObs];
 
-		//boolean legalObs = false;
+		boolean legalObs = false;
+			
 
 			for(int i = 0; i < numObs*2; i++){
-
+				
 				System.out.println("\nPlease enter the next observation (an integer representing time between 0 and 100000000 followed by an integer represtning position between -1000000 and 1000000):");
 				obs[i]= sc.nextInt();
-
+					
 			}
 			
 		int pCount = 0;
