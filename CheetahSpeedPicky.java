@@ -3,7 +3,7 @@
 
 import java.util.Scanner;
 
-public class CheetahSpeed{
+public class CheetahSpeedPicky{
 
 public static double maxSpeed(double[] speedArray, int numSpeeds){
 	
@@ -24,11 +24,12 @@ public static int[] sortTime(int[] timeList, int n){   // n is the number of val
 	boolean swapped;
 	swapped = true;
 	
-	System.out.println("\nUnsorted Times list: ");
+	/*System.out.println("\nUnsorted Times list: ");
 		
 			for(int c = 0; c < n; c++){
 			System.out.println(timeList[c]);
 			}
+	*/
 	
 	while(swapped == true){
 		
@@ -45,22 +46,22 @@ public static int[] sortTime(int[] timeList, int n){   // n is the number of val
 					swapped = false;
 				}
 				
-				System.out.println("\nTimes list: ");
+				/*System.out.println("\nTimes list: ");
 				for(int g = 0; g < n; g++){
 				System.out.println(timeList[g]);
+			*/
+			
 			}
-			} 
-	}
-		
+		} 
 	return (timeList);
-}
+	}
 
 public static int[] sortPosition(int[] positionList, int n){   // n is the number of values for time[]
 	
 	int temp;
 	boolean swapped;
 	swapped = true;
-	System.out.println("The unsorted positions are: " + positionList);
+	//System.out.println("The unsorted positions are: " + positionList);
 	
 	while(swapped == true){
 		
@@ -77,12 +78,13 @@ public static int[] sortPosition(int[] positionList, int n){   // n is the numbe
 					swapped = false;
 				}
 				
-				System.out.println("\nPositions list: ");
+				/* System.out.println("\nPositions list: ");
 				for(int a = 0; a < n; a++){
 				System.out.println(positionList[a]);
 			}
+			 */
 			 
-	}
+		}
 	
 	}
 return (positionList);
@@ -120,12 +122,21 @@ public static void main(String Args[]){
 
 		boolean legalObs = false;
 			
-
 			for(int i = 0; i < numObs*2; i++){
 				
-				System.out.println("\nPlease enter the next observation (an integer representing time between 0 and 100000000 followed by an integer represtning position between -1000000 and 1000000):");
-				obs[i]= sc.nextInt();
+				while(true){
+					System.out.println("\nPlease enter the next observation (an integer representing time between 0 and 100000000 followed by an integer represtning position between -1000000 and 1000000):");
+					obs[i]= sc.nextInt();
+					i++;
+					obs[i]= sc.nextInt();
 					
+						if ((obs[i-1] >= 0) && (obs[i] >= -1000000) && (obs[i] <= 1000000)) {
+						break;
+            }
+
+            System.out.println("Invalid input. Please try again.");
+
+        }
 			}
 			
 		int pCount = 0;
