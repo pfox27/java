@@ -1,3 +1,5 @@
+/* A program to collect information about a person and then use Person.class to print the information out. */
+
 import java.util.Scanner;
 //import Person.java;
  
@@ -6,7 +8,7 @@ public class RunnerPerson
  
   public static void main(String[] args) 
   {
- 
+ :wq
        Scanner scan = new Scanner(System.in);
  
        System.out.println("Enter the person's first name:");
