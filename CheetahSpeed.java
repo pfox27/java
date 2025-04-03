@@ -89,7 +89,7 @@ return (positionList);
 }
 
 
-public static void main(String Args[]){	
+public static void main(String[] args){	
 	
 	Scanner sc = new Scanner(System.in);
 	int numObs = 0;
