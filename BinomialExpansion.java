@@ -18,52 +18,72 @@ public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
 	int n = scan.nextInt(); // value of exponent stored as n
 	nFact = n;
-	int[] coeff = new int[n];
+	int[] coeff = new int[n + 1];
 	
-	// Now we compute n!
-	for(int i = n; i >= 2; i--){
-		nFact = nFact*(i - 1);
-		System.out.println("n! is presently " + nFact);
+	// Now we compute n! in independent for loop.
+	for(int i = n; i >= 0; i--){
+		
+		if((i == 1) || (i == 0)){	
+			System.out.println("n! is presently " + nFact);
+		}
+		
+		else {
+			nFact = nFact*(i - 1);
+			System.out.println("n! is presently " + nFact);
+		}
+
 	}
-	
-	for(int k = 1; k <= n; k++){
-		//Compute k!
-		kFact = k;
+		//kFact = 1;
+		//System.out.println("k! starts at " + kFact);
 		
-		for(int j = k; j >= 2; j--){
+	//nkFact = n;  //start computation of (n-k)!
+	//System.out.println("\n(n - k)! starts at " + nkFact);
+
+	for(int k = 0; k <= n; k++){  //Calculate coefficient in this loop
+						
 		
-			if (j == 1){
+		for(int j = k; j >= 0; j--){  //Compute k! and (n - k) in nested for loops
+		
+			kFact = j;
+		
+			if ((j == 1) || (j == 0)){
 				kFact = 1;
+				//kFact = kFact;
+				System.out.println("\nk! is presently " + kFact);
+				
 			}
-		
+			
 			else{
 				kFact = kFact*(j - 1);
 				System.out.println("k! is presently " + kFact);
 			}	
 			
-			nkFact = n - k;  //compute (n-k)!
+			for(int p = n - k; p >= 0; p--){
 			
-			for(int p = n - k; p >= 2; p--){
+			nkFact = p;
 			
-				if(p == 1){
-				nkFact = 1;
+				if((p == 1) || (p == 0)){
+				//nkFact = 1;
+				nkFact = nkFact;
+				System.out.println("p = 0 or 1");
+				System.out.println("(n - k)! is presently " + nkFact);
 				}
 			
 				else{
 					nkFact = nkFact*(p - 1);
 					System.out.println("(n - k)! is presently " + nkFact);
 				}	
-
-		coeff[k] = nFact/(kFact*nkFact);
+			}
 
 		}	
+		coeff[k] = nFact/(kFact*nkFact);
+		System.out.println("coefficient is presently " + coeff[k]);
 	
-		}
+	}	
 		
-	}
 	System.out.println("The Coefficients of the binomial expansion are: " + Arrays.toString(coeff));
-	}
+	
 	
 }
 
-
+}

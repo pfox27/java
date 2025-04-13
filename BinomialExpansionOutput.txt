@@ -1,0 +1,47 @@
+
+Please enter the exponent for the binomial as a positive integer: 
+5
+n! is presently 20
+n! is presently 60
+n! is presently 120
+n! is presently 120
+k! is presently 2
+
+(n - k)! starts at 3
+(n - k)! is presently 6
+coefficient is presently 10
+(n - k)! is presently 6
+coefficient is presently 10
+k! is presently 6
+
+(n - k)! starts at 2
+(n - k)! is presently 2
+coefficient is presently 10
+k! is presently 6
+
+(n - k)! starts at 2
+(n - k)! is presently 2
+coefficient is presently 10
+k! is presently 12
+
+(n - k)! starts at 1
+k! is presently 24
+
+(n - k)! starts at 1
+k! is presently 24
+
+(n - k)! starts at 1
+k! is presently 20
+
+(n - k)! starts at 0
+k! is presently 60
+
+(n - k)! starts at 0
+k! is presently 120
+
+(n - k)! starts at 0
+k! is presently 120
+
+(n - k)! starts at 0
+The Coefficients of the binomial expansion are: [0, 0, 10, 10, 0]
+
