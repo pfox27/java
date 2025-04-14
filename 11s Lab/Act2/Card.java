@@ -31,11 +31,14 @@ public class Card {
 	 * @param cardPointValue an <code>int</code> value
 	 *                  containing the point value of the card
 	 */
+	 
 	public Card(String cardRank, String cardSuit, int cardPointValue) {
-		//initializes a new Card with the given rank, suit, and point value
-		rank = cardRank;
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		
 		suit = cardSuit;
+		rank = cardRank;
 		pointValue = cardPointValue;
+		
 	}
 
 
@@ -43,15 +46,17 @@ public class Card {
 	 * Accesses this <code>Card's</code> suit.
 	 * @return this <code>Card's</code> suit.
 	 */
-	public String suit() {
+	public String getSuit() {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 		return suit;
-	}
+   }
 
 	/**
 	 * Accesses this <code>Card's</code> rank.
 	 * @return this <code>Card's</code> rank.
 	 */
-	public String rank() {
+	public String getRank() {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 		return rank;
 	}
 
@@ -59,7 +64,8 @@ public class Card {
 	 * Accesses this <code>Card's</code> point value.
 	 * @return this <code>Card's</code> point value.
 	 */
-	public int pointValue() {
+	public int getPointValue() {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 		return pointValue;
 	}
 
@@ -69,11 +75,14 @@ public class Card {
 	 *              are equal to those of the argument;
 	 *         false otherwise.
 	 */
-	public boolean matches(Card otherCard) {
-		return otherCard.suit().equals(this.suit())
-			&& otherCard.rank().equals(this.rank())
-			&& otherCard.pointValue() == this.pointValue();
+	public boolean matches(Card other) {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		if(suit.equals(other.getSuit()) && rank == other.getRank() && pointValue == (other.getPointValue())){
+                return true;
+        }
+        return false;
 	}
+
 
 	/**
 	 * Converts the rank, suit, and point value into a string in the format
@@ -87,6 +96,16 @@ public class Card {
 	 */
 	@Override
 	public String toString() {
-		return rank + " of " + suit + " (point value = " + pointValue + ")";
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		
+		String stringRank = getRank();
+		String stringSuit = getSuit();
+		String stringPointValue = Integer.toString(getPointValue());
+		
+		String cardString = stringRank + " of " + stringSuit + " (point value =  " + stringPointValue + ")"; 
+		
+		//System.out.println("The card's rank is " + rank + ", its suit is  " + suit + ", and its point value is " + pointValue + ".");
+	return (cardString);
 	}
 }
+

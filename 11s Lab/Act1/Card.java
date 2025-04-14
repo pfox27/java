@@ -97,8 +97,14 @@ public class Card {
 	public String toString() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 		
-		System.out.println("The card's rank is " + rank + ", its suit is  " + suit + ", and its point value is " + pointValue + ".");
-	return (rank);
+		String stringRank = getRank();
+		String stringSuit = getSuit();
+		String stringPointValue = Integer.toString(getPointValue());
+		
+		String cardString = stringRank + " of " + stringSuit + " (point value =  " + stringPointValue + ")"; 
+		
+		//System.out.println("The card's rank is " + rank + ", its suit is  " + suit + ", and its point value is " + pointValue + ".");
+	return (cardString);
 	}
 }
 

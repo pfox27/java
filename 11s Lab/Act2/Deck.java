@@ -11,21 +11,15 @@ public class Deck {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	
-	ArrayList<Card> cards = new ArrayList<Card>();
-	
-	
-	//List<Card> cards = new List<Card>(); // Create an ArrayList object for the card deck
-	//private List<Card> cards;
-	//int cards.size = 52;
+	private List<Card> cards;
 
 	/**
 	 * size is the number of not-yet-dealt cards.
 	 * Cards are dealt from the top (highest index) down.
 	 * The next card to be dealt is at size - 1.
 	 */
-	//private int size;
-	//int size = cards.size;
+	private int size;
+
 
 	/**
 	 * Creates a new <code>Deck</code> instance.<BR>
@@ -38,17 +32,13 @@ public class Deck {
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		
-	
+		ArrayList<Card> deck = new ArrayList<Card>(); // Create an ArrayList object for the card deck
 		
 		for(int i = 0; i < ranks.length; i++){
-			
-			cards.add(new Card(ranks[i], suits[i], values[i]));
-			
+			add.deck
+		
+		
 	}
-	
-		int size = cards.size();
-
-}
 
 
 	/**
@@ -65,8 +55,6 @@ public class Deck {
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		
-		//int size = cards.size();
 	}
 
 	/**
