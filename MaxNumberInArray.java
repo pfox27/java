@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MaxNumberInArray{
 	public static void main (String args[]){
 
-		int[] numberList;
+		int[] numberList; //Array of numbers as entered by user
 		int maxValue = 0;
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Please enter the number of numerical values to be stored:");
