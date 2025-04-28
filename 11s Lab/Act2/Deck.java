@@ -29,16 +29,14 @@ public class Deck {
 	 * @param suits is an array containing all of the card suits.
 	 * @param values is an array containing all of the card point values.
 	 */
-	public List Deck(String[] rank, String[] suit, int[] value) {
+	public Deck(String[] rank, String[] suit, int[] value) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		
 		//ArrayList<Card> deck = new ArrayList<Card>(); // Create an ArrayList object for the card deck
 		
-		cards = new ArrayList<>();
-	
 		Card cardNow = new Card("Blank", "Blank", 0);
 		
-		for(int i = 0; i < 52; i++){
+		for(int i = 0; i < rank.length; i++){
 			cardNow = new Card(rank[i], suit[i], value[i]);
 			cards.add(cardNow);
 				}
@@ -49,7 +47,7 @@ public class Deck {
 			System.out.print(cards.get(j));
 	}
 	size = cards.size();
-	return cards;
+	shuffle();
 }  
 		//for(int i = 0; i < ranks.length; i++){
 			//deck.add(rank[i]);
@@ -60,11 +58,11 @@ public class Deck {
 	 * Determines if this deck is empty (no undealt cards).
 	 * @return true if this deck is empty, false otherwise.
 	 */
-	public boolean isEmpty(Deck cardList) {
+	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		
 		boolean emptyDeck = false;
-		if(cardList.size == 0){
+		if(size == 0){
 			emptyDeck = true;
 		}
 		
@@ -76,10 +74,10 @@ public class Deck {
 	 * Accesses the number of undealt cards in this deck.
 	 * @return the number of undealt cards in this deck.
 	 */
-	public int size(Deck listOfCards) {
+	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		
-		return listOfCards.cards.size();
+		return cards.size();
 		
 	}
 
@@ -96,12 +94,12 @@ public class Deck {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public int deal(Deck deck) {
+	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		
-		deck.cards.size() --;
-		size(deck);
-		return (deck.get(Deck.cards.size()));
+		size --;
+		Card dealtCard = cards.get(size);
+		return dealtCard;
 		
 	}
 
