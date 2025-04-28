@@ -1,3 +1,26 @@
+/*
+ * Deck.java
+ * 
+ * Copyright 2025 Paul Fox <paulfox@Paul-Fox-MacBook-Air.local>
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ * 
+ * 
+ */
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -29,58 +52,32 @@ public class Deck {
 	 * @param suits is an array containing all of the card suits.
 	 * @param values is an array containing all of the card point values.
 	 */
-	public List Deck(String[] rank, String[] suit, int[] value) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		
-		//ArrayList<Card> deck = new ArrayList<Card>(); // Create an ArrayList object for the card deck
-		
-		cards = new ArrayList<>();
-	
-		Card cardNow = new Card("Blank", "Blank", 0);
-		
-		for(int i = 0; i < 52; i++){
-			cardNow = new Card(rank[i], suit[i], value[i]);
-			cards.add(cardNow);
-				}
-			System.out.println("\nThe Deck is now: ");
-			//return cardNow;
-		
-		for(int j = 0; j < cards.size(); j++) {   
-			System.out.print(cards.get(j));
+	public Deck(String[] ranks, String[] suits, int[] values) {
+		cards = new ArrayList<Card>();
+		for (int j = 0; j < ranks.length; j++) {
+			for (String suitString : suits) {
+				cards.add(new Card(ranks[j], suitString, values[j]));
+			}
+		}
+		size = cards.size();
+		shuffle();
 	}
-	size = cards.size();
-	return cards;
-}  
-		//for(int i = 0; i < ranks.length; i++){
-			//deck.add(rank[i]);
-			//deck.add(suit[i]);
-			//deck.add(value[i]);
+
 
 	/**
 	 * Determines if this deck is empty (no undealt cards).
 	 * @return true if this deck is empty, false otherwise.
 	 */
-	public boolean isEmpty(Deck cardList) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		
-		boolean emptyDeck = false;
-		if(cardList.size == 0){
-			emptyDeck = true;
-		}
-		
-		return emptyDeck;
-			
+	public boolean isEmpty() {
+		return size == 0;
 	}
 
 	/**
 	 * Accesses the number of undealt cards in this deck.
 	 * @return the number of undealt cards in this deck.
 	 */
-	public int size(Deck listOfCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		
-		return listOfCards.cards.size();
-		
+	public int size() {
+		return size;
 	}
 
 	/**
@@ -88,7 +85,15 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for (int k = cards.size() - 1; k > 0; k--) {
+			int howMany = k + 1;
+			int start = 0;
+			int randPos = (int) (Math.random() * howMany) + start;
+			Card temp = cards.get(k);
+			cards.set(k, cards.get(randPos));
+			cards.set(randPos, temp);
+		}
+		size = cards.size();
 	}
 
 	/**
@@ -96,13 +101,13 @@ public class Deck {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public int deal(Deck deck) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		
-		deck.cards.size() --;
-		size(deck);
-		return (deck.get(Deck.cards.size()));
-		
+	public Card deal() {
+		if (isEmpty()) {
+			return null;
+		}
+		size--;
+		Card c = cards.get(size);
+		return c;
 	}
 
 	/**
