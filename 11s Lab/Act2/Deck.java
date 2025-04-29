@@ -35,19 +35,22 @@ public class Deck {
 		//ArrayList<Card> deck = new ArrayList<Card>(); // Create an ArrayList object for the card deck
 		
 		Card cardNow = new Card("Blank", "Blank", 0);
-		
+		cards = new ArrayList<Card>();
 		for(int i = 0; i < rank.length; i++){
 			cardNow = new Card(rank[i], suit[i], value[i]);
-			cards.add(cardNow);
+			this.cards.add(cardNow);
 				}
-			System.out.println("\nThe Deck is now: ");
+			//System.out.println("\nThe Deck is now: ");
 			//return cardNow;
 		
 		for(int j = 0; j < cards.size(); j++) {   
-			System.out.print(cards.get(j));
+			System.out.print(this.cards.get(j));
 	}
-	size = cards.size();
+
+	size = this.cards.size();
 	shuffle();
+	//return cards;
+	
 }  
 		//for(int i = 0; i < ranks.length; i++){
 			//deck.add(rank[i]);
