@@ -18,7 +18,7 @@ public class DeckTester {
 		//int[] cardPointValues = new int[52];
 		
 		Deck deck1 = new Deck(cardRanks1, cardSuits1, cardPointValues1);
-		System.out.println("Deck1 size should be 3: " + deck1.size());
+		System.out.println("Deck1 size should be 5: " + deck1.size());
 		
 		//Deck.size(deck1);
 		//Deck.isEmpty(deck1.size());
@@ -38,7 +38,7 @@ public class DeckTester {
 		//Deck.size(deck3);
 		//Deck.isEmpty(deck2.size());
 		System.out.println("Deck3 dealt card is: " + deck3.deal());
-		
+		System.out.println("The number of cards left in deck 3 is now: " + deck3.size());
 		
 	}
 }
