@@ -34,14 +34,14 @@ public class Shuffler {
 	 * to each sorting procedure.
 	 */
 	private static final int SHUFFLE_COUNT = 8;
-	private static final int VALUE_COUNT = 15;
+	private static final int VALUE_COUNT = 6;
 
 	/**
 	 * Tests shuffling methods.
 	 * @param args is not used.
 	 */
 	public static void main(String[] args) {
-		System.out.println("\nThe original deck is: ");
+		System.out.println("\n\u001B[31m The original deck is: \u001B[0m");
 			
 		 int[] values1 = new int[VALUE_COUNT];
 			for (int i = 0; i < values1.length; i++) {
@@ -49,19 +49,19 @@ public class Shuffler {
 				System.out.print(" " + values1[i]);
             }
            System.out.println(" ");
-           System.out.println("\nResults of " + SHUFFLE_COUNT +
-								 " consecutive perfect shuffles:"); 
+           System.out.println("\n\u001B[36mResults of " + SHUFFLE_COUNT +
+								 " consecutive perfect shuffles: \u001B[0m"); 
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
 			perfectShuffle(values1);
-			System.out.print("  " + j + ":");
+			System.out.print("\u001B[33m  " + j + ": \u001B[0m");
 			for (int k = 0; k < values1.length; k++) {
-				System.out.print(" " + values1[k]);
+				System.out.print("\u001B[33m " + values1[k] + "\u001B[0m");
 			}
 			System.out.println();
 		}
 		System.out.println();
 
-		System.out.println("\nThe original deck is: ");
+		System.out.println("\n\u001B[31m The original deck is: \u001B[0m");
 		
 			int[] values2 = new int[VALUE_COUNT];
 			for (int i = 0; i < values2.length; i++) {
@@ -70,13 +70,13 @@ public class Shuffler {
             }
             
             System.out.println(" ");
-            System.out.println("\nResults of " + SHUFFLE_COUNT +
-								 " consecutive efficient selection shuffles:");
+            System.out.println("\n\u001B[36m Results of " + SHUFFLE_COUNT +
+								 " consecutive efficient selection shuffles: \u001B[0m");
 			for (int j = 1; j <= SHUFFLE_COUNT; j++) {
 			selectionShuffle(values2);
-			System.out.print("  " + j + ":");
+			System.out.print("\u001B[33m  " + j + ": \u001B[0m");
 			for (int k = 0; k < values2.length; k++) {
-				System.out.print(" " + values2[k]);
+				System.out.print("\u001B[33m " + values2[k] + "\u001B[0m");
 			}
 			System.out.println();
 		}
@@ -131,34 +131,36 @@ public class Shuffler {
 		int shuffled[] = new int[values.length];
 		
 		Random r = new Random();
-		int emptyCounter = 0;
+	
+		int n = 0;
 		
-		while(emptyCounter <= values.length){
-		for(int n = 0; n < values.length; n++){
-		
-			
-			int r1 = r.nextInt(values.length - 1);
-			System.out.print("\nThe value of r1 is: " + r1);
-				System.out.println("\nThe value of r1 is: " + r1);
-				System.out.println("\nvalues[r1] is is: " + values[r1]);
+			while(n < values.length){
+					
+			int r1 = r.nextInt(values.length);
+				//System.out.println("The value of r1 is: " + r1);
+				//System.out.println("values[" + r1 + "] is: " + values[r1]);
 				if(values[r1] != -1){
 					shuffled[n] = values[r1];
-					System.out.println("\nshuffled[n] is: " + shuffled[n]);
+					//System.out.println("\u001B[36m shuffled[" + n + "] is: " + shuffled[n] + "\u001B[0m");
 					values[r1] = -1;
-					emptyCounter++;
-					System.out.println("\nemptyCounter is now: " + emptyCounter);
+					n++;
 				}
+			
 			}		
-		}
 		
-		System.out.println("\nThe While Loop Has Ended!!!!");
+		
+		//System.out.println("\n\u001B[32m The While Loop Has Ended!!!!");
+		//System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \u001B[0m");
+		//System.out.println("\nShuffled deck is now: ");
 			//System.out.println("\nThe shuffled deck is: \n");
 			//for(int t = 0; t < values.length; t++){
 				//System.out.print(" " + shuffled[t]);
 			//}
 			for(int y = 0; y < values.length; y++){
-			values[y] = shuffled[y];
+				values[y] = shuffled[y];
+				//System.out.print(" " + shuffled[y]); 
 		}
+		//System.out.println("");
 		}	
 	}
 
