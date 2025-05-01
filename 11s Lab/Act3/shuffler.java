@@ -33,7 +33,7 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 5;
+	private static final int SHUFFLE_COUNT = 8;
 	private static final int VALUE_COUNT = 15;
 
 	/**
@@ -41,13 +41,16 @@ public class Shuffler {
 	 * @param args is not used.
 	 */
 	public static void main(String[] args) {
-		System.out.println("Results of " + SHUFFLE_COUNT +
-								 " consecutive perfect shuffles:");
+		System.out.println("\nThe original deck is: ");
+			
 		 int[] values1 = new int[VALUE_COUNT];
 			for (int i = 0; i < values1.length; i++) {
 				values1[i] = i;
+				System.out.print(" " + values1[i]);
             }
-            
+           System.out.println(" ");
+           System.out.println("\nResults of " + SHUFFLE_COUNT +
+								 " consecutive perfect shuffles:"); 
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
 			perfectShuffle(values1);
 			System.out.print("  " + j + ":");
@@ -89,18 +92,21 @@ public class Shuffler {
 		int k = 0;
 		//int[] shuffled = {null, null, null, null};
 		
-		for(int j = 0; j < values.length/2; j++){
+		for(int j = 0; j < (values.length + 1)/2; j++){
 			shuffled[k] = values[j];
 			k += 2;
 		}
 		
 		k = 1;
 		
-		for(int m = values.length/2; m < values.length -1; m++){
+		for(int m = (values.length + 1)/2; m < values.length; m++){
 			shuffled[k] = values[m];
 			k += 2;
 		}
 		
+		for(int r = 0; r < values.length; r++){
+			values[r] = shuffled[r];
+		}
 	}
 
 	/**
