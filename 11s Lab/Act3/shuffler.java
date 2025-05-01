@@ -33,15 +33,15 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 8;
-	private static final int VALUE_COUNT = 6;
+	private static final int SHUFFLE_COUNT = 5;
+	private static final int VALUE_COUNT = 26;
 
 	/**
 	 * Tests shuffling methods.
 	 * @param args is not used.
 	 */
 	public static void main(String[] args) {
-		System.out.println("\n\u001B[31m The original deck is: \u001B[0m");
+		System.out.println("\n" + AnsiColours.BRIGHT_RED + "The original deck is: " + AnsiColours.RESET);
 			
 		 int[] values1 = new int[VALUE_COUNT];
 			for (int i = 0; i < values1.length; i++) {
@@ -49,8 +49,8 @@ public class Shuffler {
 				System.out.print(" " + values1[i]);
             }
            System.out.println(" ");
-           System.out.println("\n\u001B[36mResults of " + SHUFFLE_COUNT +
-								 " consecutive perfect shuffles: \u001B[0m"); 
+           System.out.println("\n" + AnsiColours.BRIGHT_CYAN + "Results of " + SHUFFLE_COUNT +
+								 " consecutive perfect shuffles: " + AnsiColours.RESET); 
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
 			perfectShuffle(values1);
 			System.out.print("\u001B[33m  " + j + ": \u001B[0m");
@@ -61,7 +61,7 @@ public class Shuffler {
 		}
 		System.out.println();
 
-		System.out.println("\n\u001B[31m The original deck is: \u001B[0m");
+		System.out.println("\n" + AnsiColours.BRIGHT_RED + "The original deck is: " + AnsiColours.RESET);
 		
 			int[] values2 = new int[VALUE_COUNT];
 			for (int i = 0; i < values2.length; i++) {
@@ -70,8 +70,8 @@ public class Shuffler {
             }
             
             System.out.println(" ");
-            System.out.println("\n\u001B[36m Results of " + SHUFFLE_COUNT +
-								 " consecutive efficient selection shuffles: \u001B[0m");
+            System.out.println("\n" + AnsiColours.BRIGHT_CYAN + "Results of " + SHUFFLE_COUNT +
+								 " consecutive perfect shuffles: " + AnsiColours.RESET);
 			for (int j = 1; j <= SHUFFLE_COUNT; j++) {
 			selectionShuffle(values2);
 			System.out.print("\u001B[33m  " + j + ": \u001B[0m");
