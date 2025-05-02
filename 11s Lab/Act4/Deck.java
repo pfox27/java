@@ -96,13 +96,10 @@ public class Deck {
 			//}
 		}
 		Random r = new Random();
-	
 		int n = 0;
-		
 		cards.add(new Card("blank", "blank", 0));
 		
 			while(n < size){
-					
 				int r1 = r.nextInt(size);
 			
 					if(cards.get(r1).equals(cards.get(52))){
@@ -127,6 +124,7 @@ public class Deck {
 						cards.set(y, shuffled.get(y));
 					}
 		
+		size = cards.size();
 		
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 		}
@@ -141,7 +139,7 @@ public class Deck {
 		if (isEmpty()) {
 			return null;
 		}
-		size -= 1;
+		size -= 2;
 		Card c = cards.get(size);
 		return c;
 	}
