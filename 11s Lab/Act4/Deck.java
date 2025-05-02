@@ -20,9 +20,9 @@
  * 
  * 
  */
-
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * The Deck class represents a shuffled deck of cards.
@@ -35,6 +35,7 @@ public class Deck {
 	 * cards contains all the cards in the deck.
 	 */
 	private List<Card> cards;
+	private List<Card> shuffled;
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -60,6 +61,7 @@ public class Deck {
 			}
 		}
 		size = cards.size();
+		System.out.println(AnsiColours.BRIGHT_YELLOW + "size is: " + size  + AnsiColours.RESET);
 		shuffle();
 	}
 
@@ -85,16 +87,50 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		for (int k = cards.size() - 1; k > 0; k--) {
-			int howMany = k + 1;
-			int start = 0;
-			int randPos = (int) (Math.random() * howMany) + start;
-			Card temp = cards.get(k);
-			cards.set(k, cards.get(randPos));
-			cards.set(randPos, temp);
+		
+		//int shuffled[] = new int[values.length];
+		shuffled = new ArrayList<Card>();
+		for (int p = 0; p <= size; p++) {
+			//for (String suitString : suits) {
+				shuffled.add(new Card("Default", "Default", -5));
+			//}
 		}
-		size = cards.size();
-	}
+		Random r = new Random();
+	
+		int n = 0;
+		
+		cards.add(new Card("blank", "blank", 0));
+		
+			while(n < size){
+					
+				int r1 = r.nextInt(size);
+			
+					if(cards.get(r1).equals(cards.get(52))){
+						continue;
+					}
+					else{
+						shuffled.set(n, cards.get(r1));
+						//System.out.println(AnsiColours.BRIGHT_GREEN + " shuffled[" + n + "] is: " + shuffled.get(n) + AnsiColours.RESET);
+						cards.set(r1, cards.get(52));
+						n++;
+					}		
+			}
+		//System.out.println("\n\u001B[32m The While Loop Has Ended!!!!");
+		//System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \u001B[0m");
+		//System.out.println("\nShuffled deck is now: ");
+			//System.out.println("\nThe shuffled deck is: \n");
+			//for(int t = 0; t < values.length; t++){
+				//System.out.print(" " + shuffled[t]);
+			//}
+
+					for(int y = 0; y < size; y++){
+						cards.set(y, shuffled.get(y));
+					}
+		
+		
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		}
+
 
 	/**
 	 * Deals a card from this deck.
@@ -105,7 +141,7 @@ public class Deck {
 		if (isEmpty()) {
 			return null;
 		}
-		size--;
+		size -= 2;
 		Card c = cards.get(size);
 		return c;
 	}
