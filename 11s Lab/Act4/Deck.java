@@ -141,7 +141,7 @@ public class Deck {
 		if (isEmpty()) {
 			return null;
 		}
-		size -= 2;
+		size -= 1;
 		Card c = cards.get(size);
 		return c;
 	}
