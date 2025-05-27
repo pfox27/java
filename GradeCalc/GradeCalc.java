@@ -29,13 +29,32 @@ public class GradeCalc {
 	
 	public static void main (String[] args) {
 		
-		System.out.printl("Please enter the number of courses:");
+		System.out.println("Please enter the number of courses:");
 		Scanner scan = new Scanner(System.in); //Create new Scanner object
 		int numCourses = scan.nextInt;
+		Course[] classes = new Course[numCourses];
+		String cName = " ";
+		double catWeightingK = 0.0;
+		double catWeightingA = 0.0;
+		double catWeightingC = 0.0;
+		double catWeightingT = 0.0;
 		
-		CourseNames.courseNames(numCourses);
-		CourseNames.categories();
-		Assessments.assessments(numCourses, categories.nCat);
+		for(int i = 0; i < numCourses; i++){
+			
+			System.out.println("Please enter the name of course " + i + ":");
+			int catWeightingK = scan.nextLine;
+			System.out.println("Please enter the weighting of the knowledge category:");
+			int catWeightingK = scan.nextDouble;
+			System.out.println("Please enter the weighting of the application category:");
+			int catWeightingK = scan.nextDouble;
+			System.out.println("Please enter the weighting of the communication category:");
+			int catWeightingK = scan.nextDouble;
+			System.out.println("Please enter the weighting of the thinking category:");
+			int catWeightingK = scan.nextDouble;
+			
+			Course class1 = new Course(cName, catWeightingK, catWeightingA, catWeightingC, catWeightingT);
+			  
+		 
 		
 	}
 }
