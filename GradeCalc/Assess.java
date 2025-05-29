@@ -1,5 +1,5 @@
 /*
- * Course.java
+ * Assess.java
  * 
  * Copyright 2025 Paul Fox <paulfox@Paul-Fox-MacBook-Air.local>
  * 
@@ -21,8 +21,7 @@
  * 
  */
 
-
-public class Course {
+public class Assess {
 	
 	String name = " ";
 	double weightK = 0;
@@ -30,7 +29,7 @@ public class Course {
 	double weightC = 0;
 	double weightT = 0;
 	
-	public Course(String courseName, double catWeightK, double catWeightA, double catWeightC, double catWeightT){
+	public Assess(String courseName, double catWeightK, double catWeightA, double catWeightC, double catWeightT){
 	
 		setName(courseName);
 		setWeightK(catWeightK);
@@ -66,4 +65,3 @@ public class Course {
 		}		
 	}
 	 
-

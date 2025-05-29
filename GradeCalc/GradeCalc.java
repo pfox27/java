@@ -23,16 +23,18 @@
 
 import java.util.Scanner; //Import Scanner class
 
-
 	
 public class GradeCalc {
 	
 	public static void main (String[] args) {
 		
+		//Course[] courses = {};
+		//int numCourses = 0;
 		System.out.println("Please enter the number of courses:");
 		Scanner scan = new Scanner(System.in); //Create new Scanner object
-		int numCourses = scan.nextInt;
-		Course[] classes = new Course[numCourses];
+		int numCourses = scan.nextInt();
+		scan.nextLine();
+		Course[] courses = new Course[numCourses];
 		String cName = " ";
 		double catWeightingK = 0.0;
 		double catWeightingA = 0.0;
@@ -42,20 +44,27 @@ public class GradeCalc {
 		for(int i = 0; i < numCourses; i++){
 			
 			System.out.println("Please enter the name of course " + i + ":");
-			int catWeightingK = scan.nextLine;
+			cName = scan.nextLine();
 			System.out.println("Please enter the weighting of the knowledge category:");
-			int catWeightingK = scan.nextDouble;
+			catWeightingK = scan.nextDouble();
 			System.out.println("Please enter the weighting of the application category:");
-			int catWeightingK = scan.nextDouble;
+			catWeightingA = scan.nextDouble();
 			System.out.println("Please enter the weighting of the communication category:");
-			int catWeightingK = scan.nextDouble;
+			catWeightingC = scan.nextDouble();
 			System.out.println("Please enter the weighting of the thinking category:");
-			int catWeightingK = scan.nextDouble;
+			catWeightingT = scan.nextDouble();
+			scan.nextLine();
+			System.out.println("Please enter the number of assessments in " + cName + ":");
+			catWeightingK = scan.nextDouble();
 			
-			Course class1 = new Course(cName, catWeightingK, catWeightingA, catWeightingC, catWeightingT);
-			  
-		 
+			courses[i] = new Course(cName, catWeightingK, catWeightingA, catWeightingC, catWeightingT);
+		
+		}
+//	Assessments.assessments(numCourses, courses);
+
 		
 	}
+
 }
+
 
