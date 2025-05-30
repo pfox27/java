@@ -34,20 +34,21 @@ public class GradeCalc {
 		Scanner scan = new Scanner(System.in); //Create new Scanner object
 		int numCourses = scan.nextInt();
 		scan.nextLine();
-		Course[] courses = new Course[numCourses];
+		Course[] c = new Course[numCourses];
+
 		String cName = " ";
 		double catWeightingK = 0.0;
 		double catWeightingA = 0.0;
 		double catWeightingC = 0.0;
 		double catWeightingT = 0.0;
-		double knowledgeScoreSum = 0;
-		double applicationScoreSum = 0;
-		double thinkingScoreSum = 0;
-		double communicationScoreSum = 0;	
-		double knowledgeOutOfSum = 0;
-		double applicationOutOfSum = 0;
-		double thinkingOutOfSum = 0;
-		double communicationOutOfSum = 0;
+		double knowScoreSum = 0;
+		double appScoreSum = 0;
+		double thinkScoreSum = 0;
+		double commScoreSum = 0;	
+		double knowOutOfSum = 0;
+		double appOutOfSum = 0;
+		double thinkOutOfSum = 0;
+		double commOutOfSum = 0;
 		double[] termMark = new double[nCourses];
 		String[] aName = new String[nAssess];
 		double[] assessWeighting = new double[nAssess];
@@ -76,7 +77,10 @@ public class GradeCalc {
 			System.out.println("Please enter the number of assessments in " + cName + ":");
 			int numAssess = scan.nextInt();
 			
-			courses[i] = new Course(cName, catWeightingK, catWeightingA, catWeightingC, catWeightingT);
+			c[i] = new Course(cName, catWeightingK, catWeightingA, catWeightingC, catWeightingT);
+
+				
+				Assess[] a = new Assess[numAssess];
 
 				for(t = 0; u < numAssess; u++){
 					System.out.println("Please enter the name of assessment " + u + ":");
@@ -99,26 +103,27 @@ public class GradeCalc {
 					assessOutOfC[u] = scan.nextDouble();
 					System.out.println("Please enter the communication score for " + aName[u] + ":");
 					assessScoreC[u] = scan.nextDouble();
-					knowledgeScoreSum = knowledgeScoreSum + assessScoreK[u]/assessOutOfK[u]*aWeighting[u];
-					applicationScoreSum = applicationScoreSum + assessScoreA[u]/assessOutOfA[u]*aWeighting[u];
-					thinkingScoreSum = thinkingScoreSum + assessScoreT[u]/assessOutOfT[u]*aWeighting[u];
-					communicationScoreSum = communicationScoreSum + assessScoreC[u]/assessOutOfC[u]*aWeighting[u];
-					knowledgeOutOfSum = knowledgeOutOfSum + aWeighting[u];
-					applicationOutOfSum = applicationOutOfSum + aWeighting[u];
-					thinkingOutOfSum = thinkingOutOfSum + aWeighting[u];
-					communicationOutOfSum = communicationOutOfSum + aWeighting[u];
-					termMark[i] = knowledgeScoreSum/knowledgeOutOfSum*c[i].weightK + applicationScoreSum/applicationOutOfSum*c[i].weightA + thinkingScoreSum/thinkingOutOfSum*c[i].weightC + communicationScoreSum/communicationOutOfSum*c[i].weightT;
-					System.out.println("Term mark for " + c[i].name + " is:" + termMark[i]);					
-					Asess[] assessments = new Assess[numAssess];
-					assessments[t] = new Assess(aName[u], aWeighting[u], assessOutOfK[u], assessOutOfA[u], assessOutOfC[u], assessOutOfT[u], assessScoreK[u], assessScoreA[u], assessScoreC[u], assessScoreT[u]
+					
+										
+					
+					a[u] = new Assess(aName[u], aWeighting[u], assessOutOfK[u], assessOutOfA[u], assessOutOfC[u], assessOutOfT[u], assessScoreK[u], assessScoreA[u], assessScoreC[u], assessScoreT[u]);
 
+					knowScoreSum = knowScoreSum + a[u].kScore/a[u].kOut*a[u].wAssess;
+					appScoreSum = appScoreSum + a[u].aScore/a[u].aOut*a[u].wAssess;
+					commScoreSum = commScoreSum + a[u].cScore/a[u].cOut*a[u].wAssess;
+					thinkScoreSum = thinkScoreSum + a[u].tScore/a[u].tOut*a[u].wAssess;
+					knowOutOfSum = knowOutOfSum + aWeighting[u];
+					appOutOfSum = appOutOfSum + aWeighting[u];
+					thinkOutOfSum = thinkOutOfSum + aWeighting[u];
+					commOutOfSum = commOutOfSum + aWeighting[u];
+
+				}
+//	Assessments.assessments(numCourses, courses);
+				termMark[i] = knowScoreSum/knowOutOfSum*c[i].weightK + appScoreSum/appOutOfSum*c[i].weightA + thinkScoreSum/thinkOutOfSum*c[i].weightT + commScoreSum/commOutOfSum*c[i].weightC;
+				System.out.println("Term mark for " + c[i].name + " is:" + termMark[i]);
+			
+			}
 
 		}
-//	Assessments.assessments(numCourses, courses);
-			
-			
-	}
 
 }
-
-
