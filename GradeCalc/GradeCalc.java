@@ -22,7 +22,9 @@
  */
 
 import java.util.Scanner; //Import Scanner class
-
+import java.io.File;  // Import the File class
+import java.io.IOException;  // Import the IOException class to handle errors
+import java.io.FileWriter;   // Import the FileWriter class
 	
 public class GradeCalc {
 	
@@ -49,17 +51,8 @@ public class GradeCalc {
 		double appOutOfSum = 0;
 		double thinkOutOfSum = 0;
 		double commOutOfSum = 0;
-		double[] termMark = new double[nCourses];
-		String[] aName = new String[nAssess];
-		double[] assessWeighting = new double[nAssess];
-		double[] assessOutOfK = new double[nAssess];
-		double[] assessOutOfA = new double[nAssess];
-		double[] assessOutOfT = new double[nAssess];
-		double[] assessOutOfC = new double[nAssess];
-		double[] assessScoreK = new double[nAssess];
-		double[] assessScoreA = new double[nAssess];
-		double[] assessScoreT = new double[nAssess];
-		double[] assessScoreC = new double[nAssess];
+		double[] termMark = new double[numCourses];
+		
 		
 		for(int i = 0; i < numCourses; i++){
 			
@@ -75,38 +68,56 @@ public class GradeCalc {
 			catWeightingT = scan.nextDouble();
 			scan.nextLine();
 			System.out.println("Please enter the number of assessments in " + cName + ":");
-			int numAssess = scan.nextInt();
-			
+			int nAssess = scan.nextInt();
+			scan.nextLine();
+			String[] aName = new String[nAssess];
+			double[] aWeighting = new double[nAssess];
+			double[] assessOutOfK = new double[nAssess];
+			double[] assessOutOfA = new double[nAssess];
+			double[] assessOutOfT = new double[nAssess];
+			double[] assessOutOfC = new double[nAssess];
+			double[] assessScoreK = new double[nAssess];
+			double[] assessScoreA = new double[nAssess];
+			double[] assessScoreT = new double[nAssess];
+			double[] assessScoreC = new double[nAssess];
+
 			c[i] = new Course(cName, catWeightingK, catWeightingA, catWeightingC, catWeightingT);
 
 				
-				Assess[] a = new Assess[numAssess];
+				Assess[] a = new Assess[nAssess];
 
-				for(t = 0; u < numAssess; u++){
+				for(int u = 0; u < nAssess; u++){
 					System.out.println("Please enter the name of assessment " + u + ":");
-					aName[u] = scan.nextLine();					
+					aName[u] = scan.nextLine();
+					//String tmp = scan.nextLine();	
+					System.out.println("The name of the assessment is: " + aName[u]);
+					//String tmp = scan.nextLine();
+					//aName[u] = scan.nextLine();				
 					System.out.println("Please enter the weight (10/30/50) for " + aName[u] + ":");
 					aWeighting[u] = scan.nextDouble();
-					System.out.println("Please enter what knowledge for " + aName[u] + "is out of:");
+					System.out.println("Please enter what knowledge for " + aName[u] + " is out of:");
 					assessOutOfK[u] = scan.nextDouble();
+					//System.out.println(ANSIColors.BRIGHT_MAGENTA + " The assessOutOfK value is now: " + assessOutOfK[u] + ANSIColors.RESET);  //flag to check input
+					
 					System.out.println("Please enter the knowledge score for " + aName[u] + ":");
 					assessScoreK[u] = scan.nextDouble();
-					System.out.println("Please enter what application for " + aName[u] + "is out of:");
+					System.out.println("Please enter what application for " + aName[u] + " is out of:");
 					assessOutOfA[u] = scan.nextDouble();
 					System.out.println("Please enter the application score for " + aName[u] + ":");
 					assessScoreA[u] = scan.nextDouble();
-					System.out.println("Please enter what thinking for " + aName[u] + "is out of:");
+					System.out.println("Please enter what thinking for " + aName[u] + " is out of:");
 					assessOutOfT[u] = scan.nextDouble();
 					System.out.println("Please enter the thinking score for " + aName[u] + ":");
 					assessScoreT[u] = scan.nextDouble();
-					System.out.println("Please enter what communication for " + aName[u] + "is out of:");
+					System.out.println("Please enter what communication for " + aName[u] + " is out of:");
 					assessOutOfC[u] = scan.nextDouble();
 					System.out.println("Please enter the communication score for " + aName[u] + ":");
 					assessScoreC[u] = scan.nextDouble();
-					
-										
-					
+					scan.nextLine();
+									
 					a[u] = new Assess(aName[u], aWeighting[u], assessOutOfK[u], assessOutOfA[u], assessOutOfC[u], assessOutOfT[u], assessScoreK[u], assessScoreA[u], assessScoreC[u], assessScoreT[u]);
+
+					System.out.println("Assess " + u + " attributes are: " + a[u]);
 
 					knowScoreSum = knowScoreSum + a[u].kScore/a[u].kOut*a[u].wAssess;
 					appScoreSum = appScoreSum + a[u].aScore/a[u].aOut*a[u].wAssess;
@@ -119,9 +130,51 @@ public class GradeCalc {
 
 				}
 //	Assessments.assessments(numCourses, courses);
+				
+				System.out.println("knowScoreSum is: " + knowScoreSum);
+				System.out.println("appScoreSum is: " + appScoreSum);
+				System.out.println("commScoreSum is: " + commScoreSum);
+				System.out.println("thinkScoreSum is: " + thinkScoreSum);
+				
+				double knowFinal = knowScoreSum/knowOutOfSum*c[i].weightK;
+				double appFinal = appScoreSum/appOutOfSum*c[i].weightA;
+				double commFinal = commScoreSum/commOutOfSum*c[i].weightA;
+				double thinkFinal = thinkScoreSum/thinkOutOfSum*c[i].weightA;
+				
+				System.out.println("The final score for knowledge is: " + knowFinal);
+				System.out.println("The final score for application is: " + appFinal);
+				System.out.println("The final score for communications is: " + commFinal);
+				System.out.println("The final score for thinking is: " + thinkFinal);
+				
 				termMark[i] = knowScoreSum/knowOutOfSum*c[i].weightK + appScoreSum/appOutOfSum*c[i].weightA + thinkScoreSum/thinkOutOfSum*c[i].weightT + commScoreSum/commOutOfSum*c[i].weightC;
-				System.out.println("Term mark for " + c[i].name + " is:" + termMark[i]);
-			
+				System.out.println("Term mark (/70) for " + c[i].name + " is:" + termMark[i]);
+				
+				try {
+					File myObj = new File("filename.txt");
+					if (myObj.createNewFile()) {
+						System.out.println("File created: " + myObj.getName());
+					} 
+					else {
+						System.out.println("File already exists.");
+					}
+				} 
+				
+				catch (IOException e) {
+					System.out.println("An error occurred.");
+					e.printStackTrace();
+				}
+				
+				try {
+					FileWriter myWriter = new FileWriter("filename.txt");
+					myWriter.write("Files in Java might be tricky, but it is fun enough!");
+					myWriter.close();
+					System.out.println("Successfully wrote to the file.");
+				} 
+				catch (IOException e) {
+					System.out.println("An error occurred.");
+					e.printStackTrace();
+				}
+				
 			}
 
 		}

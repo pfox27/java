@@ -48,6 +48,7 @@ public class Assess {
 	
 		setName(n);
 		setAWeight(aW);
+		System.out.println(ANSIColors.BRIGHT_GREEN + " The aOutOfK value is now: " + aOutOfK + ANSIColors.RESET);  //flag to check input
 		setKOutOf(aOutOfK);
 		setAOutOf(aOutOfA);
 		setCOutOf(aOutOfC);
@@ -60,53 +61,59 @@ public class Assess {
 		
 	public void setName(String n)
 		{
-			this.name = n;
+			name = n;
 		}	
 	
 	public void setAWeight(double aW)
 		{
-			this.wAssess = aW;
+			wAssess = aW;
 		}
 	
-	public void setKOutOf(double kOut)
+	public void setKOutOf(double aOutOfK)
 		{
-			this.kOut = aOutOfK;
+			kOut = aOutOfK;
+			System.out.println(ANSIColors.BRIGHT_CYAN + " The kOut value is now: " + kOut + ANSIColors.RESET);  //flag to check input
 		}	
 	
-	public void setAOutOf(double aOut)
+	public void setAOutOf(double aOutOfA)
 		{
-			this.aOut = aOutOfA;
+			aOut = aOutOfA;
 		}	
 		
-	public void setCOutOf(double cOut)
+	public void setCOutOf(double aOutOfC)
 		{
-			this.cOut = aOutOfC;
+			cOut = aOutOfC;
 		}
 
-	public void setTOutOf(double tOut)
+	public void setTOutOf(double aOutOfT)
 		{
-			this.tOut = aOutOfT;
+			tOut = aOutOfT;
 		}	
 
-	public void setScoreK(double kScore)
+	public void setScoreK(double aScoreK)
 		{
-			this.kScore = aScoreK;
+			kScore = aScoreK;
 		}
 		
-	public void setScoreA(double aScore)
+	public void setScoreA(double aScoreA)
 		{
-			this.aScore = aScoreA;
+			aScore = aScoreA;
 		}		
 		
-	public void setScoreC(double cScore)
+	public void setScoreC(double aScoreC)
 		{
-			this.cScore = aScoreC;
+			cScore = aScoreC;
 		}		
 		
-	public void setScoreT(double tScore)
+	public void setScoreT(double aScoreT)
 		{
-			this.tScore = aScoreT;
-		}		
+			tScore = aScoreT;
+		}
+		
+	public String toString()
+  {
+    return  "Assessment Name: " + this.name + " Assessment weight: " + this.wAssess + " kOut: " + this.kOut + " aOut: " + this.aOut + " cOut: " + this.cOut + " tOut: " + this.tOut + " kScore: " + this.kScore + " aScore: " + this.aScore + " cScore: " + this.cScore + " tScore: " + this.tScore;
+  }		
 				
 	}
 	 
